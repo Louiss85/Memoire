@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5c489517bb492cd5918f2a778ed8515d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5c489517bb492cd5918f2a778ed8515d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5c489517bb492cd5918f2a778ed8515d = L.map(
+                "map_5c489517bb492cd5918f2a778ed8515d",
+                {
+                    center: [46.49, -0.795],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d1167f3e64779964aec280a95211ba8d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d1167f3e64779964aec280a95211ba8d.addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        function geo_json_e7fd659f9fc8d68d121b6e7774417344_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#212E53", "dashArray": "5,5", "fillOpacity": 0, "weight": 2};
+            }
+        }
+
+        function geo_json_e7fd659f9fc8d68d121b6e7774417344_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_e7fd659f9fc8d68d121b6e7774417344 = L.geoJson(null, {
+                onEachFeature: geo_json_e7fd659f9fc8d68d121b6e7774417344_onEachFeature,
+            
+                style: geo_json_e7fd659f9fc8d68d121b6e7774417344_styler,
+            ...{
+}
+        });
+
+        function geo_json_e7fd659f9fc8d68d121b6e7774417344_add (data) {
+            geo_json_e7fd659f9fc8d68d121b6e7774417344
+                .addData(data);
+        }
+            geo_json_e7fd659f9fc8d68d121b6e7774417344_add({"features": [{"geometry": {"coordinates": [[[-2.1659405178989743, 47.24632038457898], [-2.3438612771952876, 47.021272452042524], [-1.5353892335957084, 46.22959997044427], [-1.1782058289647068, 45.68804080131474], [-0.7728016605565813, 45.44582301121284], [-0.6788467170249533, 45.19510094472437], [-0.49950042059165867, 44.98859179467985], [-0.15366901619267992, 44.92820807394875], [0.05327134123891142, 45.10778592834504], [0.21171453815387054, 45.61944911888261], [0.26787154608010155, 45.92011151159585], [1.527285600480866, 46.58573203195394], [0.9600921088805876, 46.59652228361776], [0.5529114582416526, 46.83970186667531], [0.09913284671185352, 46.990253688719804], [-0.20209872051776756, 46.957423935682726], [-0.8775398826780929, 47.035121303117194], [-2.1659405178989743, 47.24632038457898]]], "type": "Polygon"}, "id": "0", "properties": {}, "type": "Feature"}, {"geometry": {"coordinates": [[[0.06635114387444219, 44.664218552122406], [0.054420010051899226, 44.65660004935043], [0.05325832215302739, 44.641185802936235], [0.10323528304687102, 44.636095726234856], [0.10751738603559602, 44.65916275766827], [0.06635114387444219, 44.664218552122406]]], "type": "Polygon"}, "id": "1", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_e7fd659f9fc8d68d121b6e7774417344.addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+            var circle_marker_46aa3d8a6595ad5d633bba434da9b3d4 = L.circleMarker(
+                [45.816669, -0.78333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_0fb00c604e5f64a497836fa1f0681eb3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b77bbcc6635275071e77b4dc55a9f77e = $(`<div id="html_b77bbcc6635275071e77b4dc55a9f77e" style="width: 100.0%; height: 100.0%;">Périnaud</div>`)[0];
+                popup_0fb00c604e5f64a497836fa1f0681eb3.setContent(html_b77bbcc6635275071e77b4dc55a9f77e);
+            
+        
+
+        circle_marker_46aa3d8a6595ad5d633bba434da9b3d4.bindPopup(popup_0fb00c604e5f64a497836fa1f0681eb3)
+        ;
+
+        
+    
+    
+            var circle_marker_2e394a69974ccbab5485ea0c6dc73712 = L.circleMarker(
+                [46.6861, 0.2458],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_2c19735006282e997de66b753c353da1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d21fe21e7a9ad9db49a17f6347b12450 = $(`<div id="html_d21fe21e7a9ad9db49a17f6347b12450" style="width: 100.0%; height: 100.0%;">Lucien Racinoux</div>`)[0];
+                popup_2c19735006282e997de66b753c353da1.setContent(html_d21fe21e7a9ad9db49a17f6347b12450);
+            
+        
+
+        circle_marker_2e394a69974ccbab5485ea0c6dc73712.bindPopup(popup_2c19735006282e997de66b753c353da1)
+        ;
+
+        
+    
+    
+            var circle_marker_b592890dd07df262e50a1bf6a055c54b = L.circleMarker(
+                [46.7167, -1.4167],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_21fe2ce585ce23785f6d2620426e88c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_75b03ae0189bfd85899046246bb417e7 = $(`<div id="html_75b03ae0189bfd85899046246bb417e7" style="width: 100.0%; height: 100.0%;">Christiane Mandin</div>`)[0];
+                popup_21fe2ce585ce23785f6d2620426e88c6.setContent(html_75b03ae0189bfd85899046246bb417e7);
+            
+        
+
+        circle_marker_b592890dd07df262e50a1bf6a055c54b.bindPopup(popup_21fe2ce585ce23785f6d2620426e88c6)
+        ;
+
+        
+    
+    
+            var circle_marker_123591ca40a7a42c9726ef470882aa67 = L.circleMarker(
+                [45.75, -0.66333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_17dbce938df37802b98f338f4b462c9e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c01530a1cb011088ef51865424b0b45d = $(`<div id="html_c01530a1cb011088ef51865424b0b45d" style="width: 100.0%; height: 100.0%;">Marc-Henri Evariste</div>`)[0];
+                popup_17dbce938df37802b98f338f4b462c9e.setContent(html_c01530a1cb011088ef51865424b0b45d);
+            
+        
+
+        circle_marker_123591ca40a7a42c9726ef470882aa67.bindPopup(popup_17dbce938df37802b98f338f4b462c9e)
+        ;
+
+        
+    
+    
+            var circle_marker_a5812320c9d358092672f172d188f6e1 = L.circleMarker(
+                [45.674822, -0.923023],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_96c7ed041301b636ef5b7178f62199b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_666febe1f29a5aa9ebc281610c7b7fad = $(`<div id="html_666febe1f29a5aa9ebc281610c7b7fad" style="width: 100.0%; height: 100.0%;">Dominique Patenbois</div>`)[0];
+                popup_96c7ed041301b636ef5b7178f62199b5.setContent(html_666febe1f29a5aa9ebc281610c7b7fad);
+            
+        
+
+        circle_marker_a5812320c9d358092672f172d188f6e1.bindPopup(popup_96c7ed041301b636ef5b7178f62199b5)
+        ;
+
+        
+    
+    
+            var circle_marker_16ab23e70bd5acdac28bd20d90beef04 = L.circleMarker(
+                [45.792305, -0.759602],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_df6cf6d423d6602bcd739d227a6cf2c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_406909ddd95b564e9e4ffd494fac0c3d = $(`<div id="html_406909ddd95b564e9e4ffd494fac0c3d" style="width: 100.0%; height: 100.0%;">Dorothy Michaud</div>`)[0];
+                popup_df6cf6d423d6602bcd739d227a6cf2c0.setContent(html_406909ddd95b564e9e4ffd494fac0c3d);
+            
+        
+
+        circle_marker_16ab23e70bd5acdac28bd20d90beef04.bindPopup(popup_df6cf6d423d6602bcd739d227a6cf2c0)
+        ;
+
+        
+    
+    
+            var circle_marker_1ef53b8f47a4743641a25ddbd656ffe0 = L.circleMarker(
+                [46.666672, -1.42],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_a6fa9fe526646493bf9f015a827441a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_adc507b954c49332643b434f86841927 = $(`<div id="html_adc507b954c49332643b434f86841927" style="width: 100.0%; height: 100.0%;">Jean-Loïc Le Quellec</div>`)[0];
+                popup_a6fa9fe526646493bf9f015a827441a9.setContent(html_adc507b954c49332643b434f86841927);
+            
+        
+
+        circle_marker_1ef53b8f47a4743641a25ddbd656ffe0.bindPopup(popup_a6fa9fe526646493bf9f015a827441a9)
+        ;
+
+        
+    
+    
+            var circle_marker_deee34ba9e56092f3e5157170551ec28 = L.circleMarker(
+                [46.216671, -0.15],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_e0a534f23781c74c54fa4b116370d645 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c43e8022650006a0e30ab0581d4a9f1a = $(`<div id="html_c43e8022650006a0e30ab0581d4a9f1a" style="width: 100.0%; height: 100.0%;">Edouard Lacuve</div>`)[0];
+                popup_e0a534f23781c74c54fa4b116370d645.setContent(html_c43e8022650006a0e30ab0581d4a9f1a);
+            
+        
+
+        circle_marker_deee34ba9e56092f3e5157170551ec28.bindPopup(popup_e0a534f23781c74c54fa4b116370d645)
+        ;
+
+        
+    
+    
+            var circle_marker_b6886d897208a592bcf15d8865647b02 = L.circleMarker(
+                [44.992241, -0.204663],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_bd09d4b46854122c053654810946d53b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8a4158562608d1faa295520edd5aa31 = $(`<div id="html_f8a4158562608d1faa295520edd5aa31" style="width: 100.0%; height: 100.0%;">Germaine Morand</div>`)[0];
+                popup_bd09d4b46854122c053654810946d53b.setContent(html_f8a4158562608d1faa295520edd5aa31);
+            
+        
+
+        circle_marker_b6886d897208a592bcf15d8865647b02.bindPopup(popup_bd09d4b46854122c053654810946d53b)
+        ;
+
+        
+    
+    
+            var circle_marker_fbf0e0286fc02ae52ba4b4e1d4967267 = L.circleMarker(
+                [45.472, -0.152],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_8d5f819082b224e56d16cd9d218a1b46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee84c1b9e1bcf700acbd4c5389048eab = $(`<div id="html_ee84c1b9e1bcf700acbd4c5389048eab" style="width: 100.0%; height: 100.0%;">Adémien Lagarde</div>`)[0];
+                popup_8d5f819082b224e56d16cd9d218a1b46.setContent(html_ee84c1b9e1bcf700acbd4c5389048eab);
+            
+        
+
+        circle_marker_fbf0e0286fc02ae52ba4b4e1d4967267.bindPopup(popup_8d5f819082b224e56d16cd9d218a1b46)
+        ;
+
+        
+    
+    
+            var circle_marker_7420fa7493402c004d27aa9fbf0e037a = L.circleMarker(
+                [45.799999, -0.26667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_3a3f9241616e18b1c3b964e7f6fb30c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8aab44f48c8dc6b53ecb238a4e2b1873 = $(`<div id="html_8aab44f48c8dc6b53ecb238a4e2b1873" style="width: 100.0%; height: 100.0%;">Guy Marquais</div>`)[0];
+                popup_3a3f9241616e18b1c3b964e7f6fb30c6.setContent(html_8aab44f48c8dc6b53ecb238a4e2b1873);
+            
+        
+
+        circle_marker_7420fa7493402c004d27aa9fbf0e037a.bindPopup(popup_3a3f9241616e18b1c3b964e7f6fb30c6)
+        ;
+
+        
+    
+    
+            var circle_marker_818037dc46d55fa0cd01cd725aaad024 = L.circleMarker(
+                [46.418943, 0.039183],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_6211b954638d009750e635c30e488d7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f0b1ae62971273e8d30cfd3870e6e6fc = $(`<div id="html_f0b1ae62971273e8d30cfd3870e6e6fc" style="width: 100.0%; height: 100.0%;">Gilbert Tanneau</div>`)[0];
+                popup_6211b954638d009750e635c30e488d7e.setContent(html_f0b1ae62971273e8d30cfd3870e6e6fc);
+            
+        
+
+        circle_marker_818037dc46d55fa0cd01cd725aaad024.bindPopup(popup_6211b954638d009750e635c30e488d7e)
+        ;
+
+        
+    
+    
+            var circle_marker_0f922806175735d88eb7a4bcd8be4097 = L.circleMarker(
+                [46.73333, -1.61667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_fb5f24d1adb65de0704982e3759209de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1312b35633f3072617a9464eaea9e7c0 = $(`<div id="html_1312b35633f3072617a9464eaea9e7c0" style="width: 100.0%; height: 100.0%;">Arsène Garnier</div>`)[0];
+                popup_fb5f24d1adb65de0704982e3759209de.setContent(html_1312b35633f3072617a9464eaea9e7c0);
+            
+        
+
+        circle_marker_0f922806175735d88eb7a4bcd8be4097.bindPopup(popup_fb5f24d1adb65de0704982e3759209de)
+        ;
+
+        
+    
+    
+            var circle_marker_9eaac5a5e349e899a189f0be7dc97194 = L.circleMarker(
+                [47.001143, -2.247107],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_0e71bfec31129c77317af3250402d6c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c68b98f31e0ba6d22d3234fb4e570f19 = $(`<div id="html_c68b98f31e0ba6d22d3234fb4e570f19" style="width: 100.0%; height: 100.0%;">Lucien Fabre-Robard</div>`)[0];
+                popup_0e71bfec31129c77317af3250402d6c4.setContent(html_c68b98f31e0ba6d22d3234fb4e570f19);
+            
+        
+
+        circle_marker_9eaac5a5e349e899a189f0be7dc97194.bindPopup(popup_0e71bfec31129c77317af3250402d6c4)
+        ;
+
+        
+    
+    
+            var circle_marker_ad4edf42f0221c99f5e1339b14ff5ddd = L.circleMarker(
+                [45.966671, -0.71667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_ebfbcb5da3c9fdb56381908ab6f5d9d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_177eefee6fe79362b0b69942c0ca4224 = $(`<div id="html_177eefee6fe79362b0b69942c0ca4224" style="width: 100.0%; height: 100.0%;">Roger Soulard</div>`)[0];
+                popup_ebfbcb5da3c9fdb56381908ab6f5d9d3.setContent(html_177eefee6fe79362b0b69942c0ca4224);
+            
+        
+
+        circle_marker_ad4edf42f0221c99f5e1339b14ff5ddd.bindPopup(popup_ebfbcb5da3c9fdb56381908ab6f5d9d3)
+        ;
+
+        
+    
+    
+            var circle_marker_404b90adaa77d38eebd7c69aed25e170 = L.circleMarker(
+                [46.099998, -0.05],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_5e5d874c5f4a1ed1ad7af6297b8bc0f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd081582996c77419ce4115cda07a9ff = $(`<div id="html_dd081582996c77419ce4115cda07a9ff" style="width: 100.0%; height: 100.0%;">Amand Lacroix</div>`)[0];
+                popup_5e5d874c5f4a1ed1ad7af6297b8bc0f0.setContent(html_dd081582996c77419ce4115cda07a9ff);
+            
+        
+
+        circle_marker_404b90adaa77d38eebd7c69aed25e170.bindPopup(popup_5e5d874c5f4a1ed1ad7af6297b8bc0f0)
+        ;
+
+        
+    
+    
+            var circle_marker_6df27a8e88c798c5fe1f363df702ea9c = L.circleMarker(
+                [46.488155, -0.784498],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_8b6a98f3954bac6c21fd6fec586ca48b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e63d67c2b176f489895392fb326069e7 = $(`<div id="html_e63d67c2b176f489895392fb326069e7" style="width: 100.0%; height: 100.0%;">Françoise Couton</div>`)[0];
+                popup_8b6a98f3954bac6c21fd6fec586ca48b.setContent(html_e63d67c2b176f489895392fb326069e7);
+            
+        
+
+        circle_marker_6df27a8e88c798c5fe1f363df702ea9c.bindPopup(popup_8b6a98f3954bac6c21fd6fec586ca48b)
+        ;
+
+        
+    
+    
+            var circle_marker_db43e09a89a6d9a70777ce908599a5d2 = L.circleMarker(
+                [45.5819, -0.6167],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_46a5591f84e3e354e0121cc8167d6461 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_32b99dd59b8fb7acc2524e024d6afd8f = $(`<div id="html_32b99dd59b8fb7acc2524e024d6afd8f" style="width: 100.0%; height: 100.0%;">René Esteffe</div>`)[0];
+                popup_46a5591f84e3e354e0121cc8167d6461.setContent(html_32b99dd59b8fb7acc2524e024d6afd8f);
+            
+        
+
+        circle_marker_db43e09a89a6d9a70777ce908599a5d2.bindPopup(popup_46a5591f84e3e354e0121cc8167d6461)
+        ;
+
+        
+    
+    
+            var circle_marker_8626b120d7ec683d91b96ad04bd90f22 = L.circleMarker(
+                [46.679594, -1.470795],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_0bf4f39c39b32e5a24a36e09e458eb1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a22029863226e9bad0c2fd27d639dc6 = $(`<div id="html_7a22029863226e9bad0c2fd27d639dc6" style="width: 100.0%; height: 100.0%;">Louis Desmier</div>`)[0];
+                popup_0bf4f39c39b32e5a24a36e09e458eb1f.setContent(html_7a22029863226e9bad0c2fd27d639dc6);
+            
+        
+
+        circle_marker_8626b120d7ec683d91b96ad04bd90f22.bindPopup(popup_0bf4f39c39b32e5a24a36e09e458eb1f)
+        ;
+
+        
+    
+    
+            var circle_marker_004868d66ecf32790a97585a23f56ad7 = L.circleMarker(
+                [46.373, 0.42],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_a70a378a1ed4e7da148886676ceee1b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8a51778ec76ca246b57be29dd03626f = $(`<div id="html_e8a51778ec76ca246b57be29dd03626f" style="width: 100.0%; height: 100.0%;">Pierre Chevrier</div>`)[0];
+                popup_a70a378a1ed4e7da148886676ceee1b9.setContent(html_e8a51778ec76ca246b57be29dd03626f);
+            
+        
+
+        circle_marker_004868d66ecf32790a97585a23f56ad7.bindPopup(popup_a70a378a1ed4e7da148886676ceee1b9)
+        ;
+
+        
+    
+    
+            var circle_marker_fe4c83141a65355c6b0ab634aadb06c2 = L.circleMarker(
+                [45.7722, -0.8875],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_fa89b0b7f28240046b9cfb1b8d7a4290 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0fd1c079c521417d2daa84e75cd98b2d = $(`<div id="html_0fd1c079c521417d2daa84e75cd98b2d" style="width: 100.0%; height: 100.0%;">Pierre Péronneau</div>`)[0];
+                popup_fa89b0b7f28240046b9cfb1b8d7a4290.setContent(html_0fd1c079c521417d2daa84e75cd98b2d);
+            
+        
+
+        circle_marker_fe4c83141a65355c6b0ab634aadb06c2.bindPopup(popup_fa89b0b7f28240046b9cfb1b8d7a4290)
+        ;
+
+        
+    
+    
+            var circle_marker_8467bb158f05f9e442af555c8c7d7d1d = L.circleMarker(
+                [45.774124, -0.4216],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_c68fff1e34f8e6f1def09b5a6105f8c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67bb246abc653815350ab37ea32362bf = $(`<div id="html_67bb246abc653815350ab37ea32362bf" style="width: 100.0%; height: 100.0%;">Georges Belluteau</div>`)[0];
+                popup_c68fff1e34f8e6f1def09b5a6105f8c2.setContent(html_67bb246abc653815350ab37ea32362bf);
+            
+        
+
+        circle_marker_8467bb158f05f9e442af555c8c7d7d1d.bindPopup(popup_c68fff1e34f8e6f1def09b5a6105f8c2)
+        ;
+
+        
+    
+    
+            var circle_marker_b7d36c27c2ab326cddb2a71286997cb8 = L.circleMarker(
+                [46.01667, 0.2],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_86564483a17e128f6416c05005e00c2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa6049e1cf64de97e10f8261fd29f454 = $(`<div id="html_fa6049e1cf64de97e10f8261fd29f454" style="width: 100.0%; height: 100.0%;">Marius Gagnère</div>`)[0];
+                popup_86564483a17e128f6416c05005e00c2f.setContent(html_fa6049e1cf64de97e10f8261fd29f454);
+            
+        
+
+        circle_marker_b7d36c27c2ab326cddb2a71286997cb8.bindPopup(popup_86564483a17e128f6416c05005e00c2f)
+        ;
+
+        
+    
+    
+            var circle_marker_9c1b87570c6972f597a0e437cd43e049 = L.circleMarker(
+                [45.355, -0.66],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_49cf1cfa00ea436690797e3d211e5495 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3a21b0ad1f1827f78e4e38ba9b5f611 = $(`<div id="html_f3a21b0ad1f1827f78e4e38ba9b5f611" style="width: 100.0%; height: 100.0%;">Renée Gautier</div>`)[0];
+                popup_49cf1cfa00ea436690797e3d211e5495.setContent(html_f3a21b0ad1f1827f78e4e38ba9b5f611);
+            
+        
+
+        circle_marker_9c1b87570c6972f597a0e437cd43e049.bindPopup(popup_49cf1cfa00ea436690797e3d211e5495)
+        ;
+
+        
+    
+    
+            var circle_marker_bfb89ea57a4e7a61c4967465908d22cd = L.circleMarker(
+                [45.118, -0.149],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_88b0c7064a6e8d46930c451c7b1e1bf0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_12c81ceb716351fd968a510879958b52 = $(`<div id="html_12c81ceb716351fd968a510879958b52" style="width: 100.0%; height: 100.0%;">Odette Chapouthier</div>`)[0];
+                popup_88b0c7064a6e8d46930c451c7b1e1bf0.setContent(html_12c81ceb716351fd968a510879958b52);
+            
+        
+
+        circle_marker_bfb89ea57a4e7a61c4967465908d22cd.bindPopup(popup_88b0c7064a6e8d46930c451c7b1e1bf0)
+        ;
+
+        
+    
+    
+            var circle_marker_6f8402fe784250af9d1fb658e5cd132e = L.circleMarker(
+                [46.666672, -1.43333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_4bbe688430657f2f378d2f4a92818409 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3fe846d37d8acc0424bf1b59fa0608e8 = $(`<div id="html_3fe846d37d8acc0424bf1b59fa0608e8" style="width: 100.0%; height: 100.0%;">Arantèle</div>`)[0];
+                popup_4bbe688430657f2f378d2f4a92818409.setContent(html_3fe846d37d8acc0424bf1b59fa0608e8);
+            
+        
+
+        circle_marker_6f8402fe784250af9d1fb658e5cd132e.bindPopup(popup_4bbe688430657f2f378d2f4a92818409)
+        ;
+
+        
+    
+    
+            var circle_marker_c96328be395e7f78b0ca9638bb059dfb = L.circleMarker(
+                [45.98333, -1.08],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_644aee807e2889ba27c2c3d5fe3481d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a3f0901bbae556bbbbaecdbb14ba4ea = $(`<div id="html_1a3f0901bbae556bbbbaecdbb14ba4ea" style="width: 100.0%; height: 100.0%;">Alexandre Négret</div>`)[0];
+                popup_644aee807e2889ba27c2c3d5fe3481d6.setContent(html_1a3f0901bbae556bbbbaecdbb14ba4ea);
+            
+        
+
+        circle_marker_c96328be395e7f78b0ca9638bb059dfb.bindPopup(popup_644aee807e2889ba27c2c3d5fe3481d6)
+        ;
+
+        
+    
+    
+            var circle_marker_7e3197c9cab89db58642c0d155a09f7a = L.circleMarker(
+                [46.316669, -0.46667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_825127c53a7c9b74710884be30b16554 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_011323f1777594029ee7357ecd5ecb24 = $(`<div id="html_011323f1777594029ee7357ecd5ecb24" style="width: 100.0%; height: 100.0%;">Henri Martin</div>`)[0];
+                popup_825127c53a7c9b74710884be30b16554.setContent(html_011323f1777594029ee7357ecd5ecb24);
+            
+        
+
+        circle_marker_7e3197c9cab89db58642c0d155a09f7a.bindPopup(popup_825127c53a7c9b74710884be30b16554)
+        ;
+
+        
+    
+    
+            var circle_marker_54f13779706a40cca856924f51c6f08a = L.circleMarker(
+                [45.683331, -0.16667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_288e2a46b4b11fd9036bf28415823b39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_923a99544aa13641d74441f040aad24b = $(`<div id="html_923a99544aa13641d74441f040aad24b" style="width: 100.0%; height: 100.0%;">Jean-Henri Burgaud</div>`)[0];
+                popup_288e2a46b4b11fd9036bf28415823b39.setContent(html_923a99544aa13641d74441f040aad24b);
+            
+        
+
+        circle_marker_54f13779706a40cca856924f51c6f08a.bindPopup(popup_288e2a46b4b11fd9036bf28415823b39)
+        ;
+
+        
+    
+    
+            var circle_marker_b1c2f09d4f73965e07220a89e363d9a1 = L.circleMarker(
+                [46.583328, 0.33333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_a565b8be0d29f67e73565288e325640f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5e44cef62e68c8d379e68225f2d098c = $(`<div id="html_d5e44cef62e68c8d379e68225f2d098c" style="width: 100.0%; height: 100.0%;">Raymond Tireau</div>`)[0];
+                popup_a565b8be0d29f67e73565288e325640f.setContent(html_d5e44cef62e68c8d379e68225f2d098c);
+            
+        
+
+        circle_marker_b1c2f09d4f73965e07220a89e363d9a1.bindPopup(popup_a565b8be0d29f67e73565288e325640f)
+        ;
+
+        
+    
+    
+            var circle_marker_5a53ec8298e5ecb7ff73c83a32aa604d = L.circleMarker(
+                [45.49147, -0.80632],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_6b5b76b26cb3a850675b861a03db4779 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_defde1cd232bdbe2203f223ce4b4eede = $(`<div id="html_defde1cd232bdbe2203f223ce4b4eede" style="width: 100.0%; height: 100.0%;">Marcel Pellisson</div>`)[0];
+                popup_6b5b76b26cb3a850675b861a03db4779.setContent(html_defde1cd232bdbe2203f223ce4b4eede);
+            
+        
+
+        circle_marker_5a53ec8298e5ecb7ff73c83a32aa604d.bindPopup(popup_6b5b76b26cb3a850675b861a03db4779)
+        ;
+
+        
+    
+    
+            var circle_marker_fd6e9dbe0ed97bf855ffaf89c3eb838e = L.circleMarker(
+                [45.128, -0.658],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_88c244b0da87cb97ceaa315877d139bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43f2731876205a311dc1cd3f52b081be = $(`<div id="html_43f2731876205a311dc1cd3f52b081be" style="width: 100.0%; height: 100.0%;">Gérard Sansey</div>`)[0];
+                popup_88c244b0da87cb97ceaa315877d139bc.setContent(html_43f2731876205a311dc1cd3f52b081be);
+            
+        
+
+        circle_marker_fd6e9dbe0ed97bf855ffaf89c3eb838e.bindPopup(popup_88c244b0da87cb97ceaa315877d139bc)
+        ;
+
+        
+    
+    
+            var circle_marker_792a663fa269d4425d286c4ca0da0b08 = L.circleMarker(
+                [46.539246, -1.617526],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_abbfbcd2954a38e1ba326d83fd27380b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec32c8b6aee56787b67b347a410397cd = $(`<div id="html_ec32c8b6aee56787b67b347a410397cd" style="width: 100.0%; height: 100.0%;">Claude Burneau</div>`)[0];
+                popup_abbfbcd2954a38e1ba326d83fd27380b.setContent(html_ec32c8b6aee56787b67b347a410397cd);
+            
+        
+
+        circle_marker_792a663fa269d4425d286c4ca0da0b08.bindPopup(popup_abbfbcd2954a38e1ba326d83fd27380b)
+        ;
+
+        
+    
+    
+            var circle_marker_4689d8d5e7774d4f8e86a83cffec19e7 = L.circleMarker(
+                [46.150002, 0.3],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_236508e7573445d5f18b9938c7cbf058 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c25bbbff2ed2cb57cb2c4ab83370150 = $(`<div id="html_1c25bbbff2ed2cb57cb2c4ab83370150" style="width: 100.0%; height: 100.0%;">Eric Nowak</div>`)[0];
+                popup_236508e7573445d5f18b9938c7cbf058.setContent(html_1c25bbbff2ed2cb57cb2c4ab83370150);
+            
+        
+
+        circle_marker_4689d8d5e7774d4f8e86a83cffec19e7.bindPopup(popup_236508e7573445d5f18b9938c7cbf058)
+        ;
+
+        
+    
+    
+            var circle_marker_4ce478bca22e475031458097deb6c2b4 = L.circleMarker(
+                [46.316669, -0.469267],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_13bc5c24cc60a5e9e8161ad458326dda = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_328158fa0327ecde7d7b3d9c97bd7c80 = $(`<div id="html_328158fa0327ecde7d7b3d9c97bd7c80" style="width: 100.0%; height: 100.0%;">Alphonse Favrault</div>`)[0];
+                popup_13bc5c24cc60a5e9e8161ad458326dda.setContent(html_328158fa0327ecde7d7b3d9c97bd7c80);
+            
+        
+
+        circle_marker_4ce478bca22e475031458097deb6c2b4.bindPopup(popup_13bc5c24cc60a5e9e8161ad458326dda)
+        ;
+
+        
+    
+    
+            var circle_marker_39edc95320c707d78d3ec16b405d9cb3 = L.circleMarker(
+                [45.831, 0.193],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_5830e224ab7be21384e7b71c60ca8d1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_501457415045cb273df390efe5a4007d = $(`<div id="html_501457415045cb273df390efe5a4007d" style="width: 100.0%; height: 100.0%;">Raymond Boureaud</div>`)[0];
+                popup_5830e224ab7be21384e7b71c60ca8d1b.setContent(html_501457415045cb273df390efe5a4007d);
+            
+        
+
+        circle_marker_39edc95320c707d78d3ec16b405d9cb3.bindPopup(popup_5830e224ab7be21384e7b71c60ca8d1b)
+        ;
+
+        
+    
+    
+            var circle_marker_2ac00551d816b9e951146bdd6c606159 = L.circleMarker(
+                [45.98333, 0.23333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_c7e385b54f15d4d0ce6ff3bf05bf33fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a51fab71cc2a71b8a22d337988a7e5b = $(`<div id="html_0a51fab71cc2a71b8a22d337988a7e5b" style="width: 100.0%; height: 100.0%;">Marc Marchadier</div>`)[0];
+                popup_c7e385b54f15d4d0ce6ff3bf05bf33fb.setContent(html_0a51fab71cc2a71b8a22d337988a7e5b);
+            
+        
+
+        circle_marker_2ac00551d816b9e951146bdd6c606159.bindPopup(popup_c7e385b54f15d4d0ce6ff3bf05bf33fb)
+        ;
+
+        
+    
+    
+            var circle_marker_c5638d8ee5af4b69b26da9f21d7412cc = L.circleMarker(
+                [46.02667, 0.2],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_1616f02cfff797a30b71f12c48e5b131 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1321f154c02771432d2b65cbb99d1b0 = $(`<div id="html_d1321f154c02771432d2b65cbb99d1b0" style="width: 100.0%; height: 100.0%;">Jacques Pingot</div>`)[0];
+                popup_1616f02cfff797a30b71f12c48e5b131.setContent(html_d1321f154c02771432d2b65cbb99d1b0);
+            
+        
+
+        circle_marker_c5638d8ee5af4b69b26da9f21d7412cc.bindPopup(popup_1616f02cfff797a30b71f12c48e5b131)
+        ;
+
+        
+    
+    
+            var circle_marker_19e97236b336fec46966a04ca4db8d3f = L.circleMarker(
+                [46.1502, 0.27044],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_0ac54bd84c4f241ce4d0b797a8a9f42d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d3917183b5cae9ddeebc1fee9e15a8c = $(`<div id="html_2d3917183b5cae9ddeebc1fee9e15a8c" style="width: 100.0%; height: 100.0%;">Eugène Rougier</div>`)[0];
+                popup_0ac54bd84c4f241ce4d0b797a8a9f42d.setContent(html_2d3917183b5cae9ddeebc1fee9e15a8c);
+            
+        
+
+        circle_marker_19e97236b336fec46966a04ca4db8d3f.bindPopup(popup_0ac54bd84c4f241ce4d0b797a8a9f42d)
+        ;
+
+        
+    
+    
+            var circle_marker_a3d9ad640da7caf27909e813b5886903 = L.circleMarker(
+                [46.216671, -0.13333],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_bbc13d988fde47ccfe3e89294a662a02 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d5cb7e2028ffb84e3d931e84e8bb994 = $(`<div id="html_5d5cb7e2028ffb84e3d931e84e8bb994" style="width: 100.0%; height: 100.0%;">Adolphe Métivier</div>`)[0];
+                popup_bbc13d988fde47ccfe3e89294a662a02.setContent(html_5d5cb7e2028ffb84e3d931e84e8bb994);
+            
+        
+
+        circle_marker_a3d9ad640da7caf27909e813b5886903.bindPopup(popup_bbc13d988fde47ccfe3e89294a662a02)
+        ;
+
+        
+    
+    
+            var circle_marker_b4a2735c95cf05f90e58eb5b8b8e6a66 = L.circleMarker(
+                [46.75, 0.4164],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_1841e9a93dc86f5c30b45972e4f0c4b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_173c8f2540a42df742560c951138ce28 = $(`<div id="html_173c8f2540a42df742560c951138ce28" style="width: 100.0%; height: 100.0%;">Jules Fortuné</div>`)[0];
+                popup_1841e9a93dc86f5c30b45972e4f0c4b8.setContent(html_173c8f2540a42df742560c951138ce28);
+            
+        
+
+        circle_marker_b4a2735c95cf05f90e58eb5b8b8e6a66.bindPopup(popup_1841e9a93dc86f5c30b45972e4f0c4b8)
+        ;
+
+        
+    
+    
+            var circle_marker_eb2d28684b3eef70769fc741bb769bdd = L.circleMarker(
+                [46.38057, -1.12376],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_e92aa6805ce5db4b9ca3b2ce8293a340 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8da2bfe0fa2f59bd89b9a4a31919db94 = $(`<div id="html_8da2bfe0fa2f59bd89b9a4a31919db94" style="width: 100.0%; height: 100.0%;">Emile Gauvrit</div>`)[0];
+                popup_e92aa6805ce5db4b9ca3b2ce8293a340.setContent(html_8da2bfe0fa2f59bd89b9a4a31919db94);
+            
+        
+
+        circle_marker_eb2d28684b3eef70769fc741bb769bdd.bindPopup(popup_e92aa6805ce5db4b9ca3b2ce8293a340)
+        ;
+
+        
+    
+    
+            var circle_marker_fa0e21e48ce66ddfa243627e28f52aa1 = L.circleMarker(
+                [44.837, -0.576],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_315c14299eab0591750d21ede95ca989 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8906541e8b36740ba670f08778d3810f = $(`<div id="html_8906541e8b36740ba670f08778d3810f" style="width: 100.0%; height: 100.0%;">Jean Daviaud</div>`)[0];
+                popup_315c14299eab0591750d21ede95ca989.setContent(html_8906541e8b36740ba670f08778d3810f);
+            
+        
+
+        circle_marker_fa0e21e48ce66ddfa243627e28f52aa1.bindPopup(popup_315c14299eab0591750d21ede95ca989)
+        ;
+
+        
+    
+    
+            var circle_marker_47799fd56e9ecde012246131323dea56 = L.circleMarker(
+                [46.466671, -1.5],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_3941f03cd45d9cd57e89c2b8b35681a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab1e79e6a6420617717fe499497037ee = $(`<div id="html_ab1e79e6a6420617717fe499497037ee" style="width: 100.0%; height: 100.0%;">Eugène Charier</div>`)[0];
+                popup_3941f03cd45d9cd57e89c2b8b35681a1.setContent(html_ab1e79e6a6420617717fe499497037ee);
+            
+        
+
+        circle_marker_47799fd56e9ecde012246131323dea56.bindPopup(popup_3941f03cd45d9cd57e89c2b8b35681a1)
+        ;
+
+        
+    
+    
+            var circle_marker_8b45ef796f86b6098218662477f5a060 = L.circleMarker(
+                [46.415375, -0.356154],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_bd493e9549d604d6a206ccc0304c2ca8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3c3aeff7f2e944d1ba565205e4f1dc6 = $(`<div id="html_e3c3aeff7f2e944d1ba565205e4f1dc6" style="width: 100.0%; height: 100.0%;">Suzanne Bontems</div>`)[0];
+                popup_bd493e9549d604d6a206ccc0304c2ca8.setContent(html_e3c3aeff7f2e944d1ba565205e4f1dc6);
+            
+        
+
+        circle_marker_8b45ef796f86b6098218662477f5a060.bindPopup(popup_bd493e9549d604d6a206ccc0304c2ca8)
+        ;
+
+        
+    
+    
+            var circle_marker_2180cf2396ce7ef423ab43ae737701d0 = L.circleMarker(
+                [46.1983, -0.4164],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_c44407861091d7df10645b15769ef154 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3688b7b59aee5173cdf7e442e51e9ff2 = $(`<div id="html_3688b7b59aee5173cdf7e442e51e9ff2" style="width: 100.0%; height: 100.0%;">Yves Rabault</div>`)[0];
+                popup_c44407861091d7df10645b15769ef154.setContent(html_3688b7b59aee5173cdf7e442e51e9ff2);
+            
+        
+
+        circle_marker_2180cf2396ce7ef423ab43ae737701d0.bindPopup(popup_c44407861091d7df10645b15769ef154)
+        ;
+
+        
+    
+    
+            var circle_marker_2c26021b1fcd8aed6ee2ed6c4414d17e = L.circleMarker(
+                [46.3156, -0.5456],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_0c9bebb0471b6f0cc5b87147e2fd7254 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dffcc9c313070a0bd32c8358652782c6 = $(`<div id="html_dffcc9c313070a0bd32c8358652782c6" style="width: 100.0%; height: 100.0%;">Raymond Rousseau</div>`)[0];
+                popup_0c9bebb0471b6f0cc5b87147e2fd7254.setContent(html_dffcc9c313070a0bd32c8358652782c6);
+            
+        
+
+        circle_marker_2c26021b1fcd8aed6ee2ed6c4414d17e.bindPopup(popup_0c9bebb0471b6f0cc5b87147e2fd7254)
+        ;
+
+        
+    
+    
+            var circle_marker_5edb854c561a2ddfe36189ee12c8f90c = L.circleMarker(
+                [47.08, -1.78],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_f5ae5f4b41b7c58f7dd0c14a582f1152 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca80778b51a66ee796ca8d625b47499f = $(`<div id="html_ca80778b51a66ee796ca8d625b47499f" style="width: 100.0%; height: 100.0%;">Eloi Guitteny</div>`)[0];
+                popup_f5ae5f4b41b7c58f7dd0c14a582f1152.setContent(html_ca80778b51a66ee796ca8d625b47499f);
+            
+        
+
+        circle_marker_5edb854c561a2ddfe36189ee12c8f90c.bindPopup(popup_f5ae5f4b41b7c58f7dd0c14a582f1152)
+        ;
+
+        
+    
+    
+            var circle_marker_134aefa65d8f3fce5484a5f7c64ceb2a = L.circleMarker(
+                [46.2368212, 0.6851891],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_659afb0dc66c93f10ae4cd9622d9e049 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1e6f25826a531583617c58f1535f113 = $(`<div id="html_e1e6f25826a531583617c58f1535f113" style="width: 100.0%; height: 100.0%;">Marc Jean-Baptiste Cerisier</div>`)[0];
+                popup_659afb0dc66c93f10ae4cd9622d9e049.setContent(html_e1e6f25826a531583617c58f1535f113);
+            
+        
+
+        circle_marker_134aefa65d8f3fce5484a5f7c64ceb2a.bindPopup(popup_659afb0dc66c93f10ae4cd9622d9e049)
+        ;
+
+        
+    
+    
+            var circle_marker_1ee9cd4cfb80ba84c60410d9df3dee79 = L.circleMarker(
+                [46.01667, -0.71667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_3f6f9a7d0a2e9a6994aae91663f75d6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_927f9e68ce5241f6addab04919a23b81 = $(`<div id="html_927f9e68ce5241f6addab04919a23b81" style="width: 100.0%; height: 100.0%;">Daniel Abran</div>`)[0];
+                popup_3f6f9a7d0a2e9a6994aae91663f75d6c.setContent(html_927f9e68ce5241f6addab04919a23b81);
+            
+        
+
+        circle_marker_1ee9cd4cfb80ba84c60410d9df3dee79.bindPopup(popup_3f6f9a7d0a2e9a6994aae91663f75d6c)
+        ;
+
+        
+    
+    
+            var circle_marker_149a0f1e61a8d35b25a4e0641d977a90 = L.circleMarker(
+                [46.2556, -0.5386],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_5c489517bb492cd5918f2a778ed8515d);
+        
+    
+        var popup_bf616f3aeccb3b3f1e9e0d54942d66ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4dd436fb53438e4448cab34e883dd8ac = $(`<div id="html_4dd436fb53438e4448cab34e883dd8ac" style="width: 100.0%; height: 100.0%;">Ulysse Dubois</div>`)[0];
+                popup_bf616f3aeccb3b3f1e9e0d54942d66ae.setContent(html_4dd436fb53438e4448cab34e883dd8ac);
+            
+        
+
+        circle_marker_149a0f1e61a8d35b25a4e0641d977a90.bindPopup(popup_bf616f3aeccb3b3f1e9e0d54942d66ae)
+        ;
+
+        
+    
+</script>
+</html>
